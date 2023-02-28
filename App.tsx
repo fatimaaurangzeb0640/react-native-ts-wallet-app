@@ -2,7 +2,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import Welcome from "./screens/Welcome";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font" ;
-import RootStack from './components/navigators/RockStack';
+import RootStack from './components/navigators/RootStack';
 
 
 
