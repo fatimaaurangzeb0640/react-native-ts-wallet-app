@@ -59,3 +59,27 @@ export const transactionData = [
     },
   },
 ];
+
+export const sendMoneyData = [
+  {
+    id: 1,
+    amount: "2450.65",
+    name: "Levi",
+    background: colors.tertiary,
+    img: require("../assets/portraits/1.jpg"),
+  },
+  {
+    id: 2,
+    amount: "54350.57",
+    name: "Bakugo",
+    background: colors.primary,
+    img: require("../assets/portraits/2.jpg"),
+  },
+  {
+    id: 1,
+    amount: "56450.21",
+    name: "Itachi",
+    background: colors.accent,
+    img: require("../assets/portraits/3.jpg"),
+  },
+];
