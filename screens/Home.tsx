@@ -11,12 +11,18 @@ import SendMoneySection from "../components/money/SendMoneySection";
 //images
 
 //data
-import { cardsData } from "./dummyData";
-import { transactionData } from "./dummyData";
-import { sendMoneyData } from "./dummyData";
+import { cardsData } from "../utils/dummyData";
+import { transactionData } from "../utils/dummyData";
+import { sendMoneyData } from "../utils/dummyData";
+
+import { RootStackParamList } from "../components/navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack" 
 
 
-const Home: FunctionComponent = () =>{
+export type Props = StackScreenProps<RootStackParamList, "Home">
+
+
+const Home: FunctionComponent<Props> = () =>{
 
     return(
         <View style={styles.homeContianer}>

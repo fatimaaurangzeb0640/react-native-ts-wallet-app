@@ -8,8 +8,14 @@ import BigText from "../components/texts/BigText"
 import SmallText from "../components/texts/SmallText"
 import RegularButton from "../components/buttons/RegularButton";
 
+import { RootStackParamList } from "../components/navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack" 
 
-const Welcome: FunctionComponent = () =>{
+
+type Props = StackScreenProps<RootStackParamList, "Welcome">
+
+
+const Welcome: FunctionComponent<Props> = ({navigation}) =>{
     return(
         <View style={styles.welcomeContianer}>
             <StatusBar style="light" />
@@ -19,7 +25,7 @@ const Welcome: FunctionComponent = () =>{
             <View style={styles.bottomSection}>
                 <BigText textStyles={{ width: "70%", marginBottom: 25}}>Best way to track money</BigText>
                 <SmallText textStyles={{ width: "70%", marginBottom: 25}}>Best payment method, connects your money to your friends and family</SmallText>
-                <RegularButton onPress={()=>{console.log("button pressed")}}>Get started</RegularButton>
+                <RegularButton onPress={()=>{navigation.navigate("Home")}}>Get started</RegularButton>
             </View> 
         </View>
     )

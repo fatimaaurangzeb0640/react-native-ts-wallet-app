@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     regularButton:{
       alignItems: "center",
       backgroundColor: colors.primary,
-      width: "100%",
+    //   width: "100%",
       padding: 20,
       borderRadius: 20
     }

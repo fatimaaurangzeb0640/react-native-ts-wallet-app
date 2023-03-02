@@ -9,29 +9,17 @@ import RegularText from "../texts/RegularText";
 import SmallText from "../texts/SmallText";
 
 //types
-import { CardProps } from "./types";
-
-//navigation
-import {useNavigation} from "@react-navigation/native"
-import {Props as HomeProps} from "./../../screens/Home"
+import { BalanceCardProps } from "./types";
 
 
-const CardItem : FunctionComponent<CardProps> = (props) =>{
+const BalanceCard : FunctionComponent<BalanceCardProps> = (props) =>{
 
-    const navigation = useNavigation<HomeProps["navigation"]>()
 
-    const handlePress = () =>{
-        navigation.navigate("Balance", {...props })
-    }
-
-    const {accountNo} = props
-  
     return (
         <ImageBackground style={styles.cardImageBg} source={require('../../assets/bgs/background_transparent.png')}>
-            <TouchableHighlight style={styles.cardTouchable} underlayColor={colors.secondary} onPress={handlePress}>
                 <View style={styles.touchableView}>
                     <View style={styles.cardRow}>
-                        <RegularText textStyles={{color: colors.white, marginTop: 0}}> ******{accountNo.slice(6,10)}</RegularText>
+                        <RegularText textStyles={{color: colors.white, marginTop: 0}}> ******{props?.accountNo?.slice(6,10)}</RegularText>
                     </View>
                     <View style={styles.cardRow}>
                        <View style= {{flex: 3}} >
@@ -41,7 +29,6 @@ const CardItem : FunctionComponent<CardProps> = (props) =>{
                        <Image style={styles.logo} source={props.logo} />
                     </View>
                 </View>
-            </TouchableHighlight>
         </ImageBackground>
     )
 }
@@ -49,11 +36,10 @@ const CardItem : FunctionComponent<CardProps> = (props) =>{
 const styles = StyleSheet.create({
     cardImageBg:{
         height: "75%",
-        width:  ScreenWidth * 0.67,
+        width:  "100%",
         resizeMode: "cover",
         backgroundColor: colors.accent,
         borderRadius: 25,
-        marginRight: 25,
         overflow: "hidden"
     },
     cardTouchable: {
@@ -83,4 +69,4 @@ const styles = StyleSheet.create({
   
 })
 
-export default CardItem;
+export default BalanceCard;
